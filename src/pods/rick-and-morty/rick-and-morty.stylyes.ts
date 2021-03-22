@@ -2,6 +2,7 @@ import { css } from '@emotion/css';
 
 export const cardsContainer = css`
   padding: 15px;
+  min-height: 50em;
   width: 100%;
 `;
 

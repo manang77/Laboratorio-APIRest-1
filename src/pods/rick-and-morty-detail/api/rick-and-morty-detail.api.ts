@@ -9,8 +9,9 @@ export const getRickAndMorthyCharacterDetail = async (
     const rickAndMortyCharacterDetail = await Axios.get<
       RickAndMortyCharacterDataApi
     >(urlBase)
-      .then(response => response.data)
-      .then(data => data);
+      .then(response => {
+        return response.data;
+      });
     return rickAndMortyCharacterDetail;
   } catch {
     console.log('Not such character');

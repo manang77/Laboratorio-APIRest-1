@@ -13,8 +13,7 @@ export const getRickAndMorthyCharacters = async (
     const rickAndMortyCharacters = await Axios.get<RickAndMortyApiModel>(
       urlBase + (name ? `&name=${name}` : '')
     )
-      .then(response => response.data)
-      .then(data => data);
+      .then(response => response.data);
     return rickAndMortyCharacters;
   } catch {
     return getNewRickAndMortyApiModel();
