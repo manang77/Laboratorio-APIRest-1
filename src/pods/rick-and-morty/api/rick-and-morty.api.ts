@@ -8,7 +8,7 @@ export const getRickAndMorthyCharacters = async (
   page: number,
   name: string
 ): Promise<RickAndMortyApiModel> => {
-  const urlBase = `https://rickandmortyapi.com/api/character/?page=${page.toString()}`;
+  const urlBase = `${process.env.BASE_SERVER_URL}/character/?page=${page.toString()}`;
   try {
     const rickAndMortyCharacters = await Axios.get<RickAndMortyApiModel>(
       urlBase + (name ? `&name=${name}` : '')

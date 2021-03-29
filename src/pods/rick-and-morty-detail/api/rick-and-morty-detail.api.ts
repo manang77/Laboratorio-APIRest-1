@@ -4,7 +4,7 @@ import { RickAndMortyCharacterDataApi } from './rick-and-morty-detail.api.model'
 export const getRickAndMorthyCharacterDetail = async (
   id: string
 ): Promise<RickAndMortyCharacterDataApi> => {
-  const urlBase = `https://rickandmortyapi.com/api/character/${id}`;
+  const urlBase = `${process.env.BASE_SERVER_URL}/character/${id}`;
   try {
     const rickAndMortyCharacterDetail = await Axios.get<
       RickAndMortyCharacterDataApi
