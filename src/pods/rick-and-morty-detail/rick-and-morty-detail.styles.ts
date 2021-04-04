@@ -20,3 +20,19 @@ export const lineElementIcon = css`
 export const lineButtonIcon = css`
   padding-left: 90%;
 `;
+
+export const characterContainer = css`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const messageContainer = css`
+  width: 100%;
+`;
+
+export const characterCardContainer = css`
+  width: 100%;
+`;
+

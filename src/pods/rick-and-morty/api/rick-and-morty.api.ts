@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import {
   RickAndMortyApiModel,
-  getNewRickAndMortyApiModel,
 } from './rick-and-morty.api.model';
 
 export const getRickAndMorthyCharacters = async (
@@ -9,13 +8,9 @@ export const getRickAndMorthyCharacters = async (
   name: string
 ): Promise<RickAndMortyApiModel> => {
   const urlBase = `${process.env.BASE_SERVER_URL}/character/?page=${page.toString()}`;
-  try {
-    const rickAndMortyCharacters = await Axios.get<RickAndMortyApiModel>(
-      urlBase + (name ? `&name=${name}` : '')
-    )
-      .then(response => response.data);
-    return rickAndMortyCharacters;
-  } catch {
-    return getNewRickAndMortyApiModel();
-  }
+  const rickAndMortyCharacters = await Axios.get<RickAndMortyApiModel>(
+    urlBase + (name ? `&name=${name}` : '')
+  )
+    .then(response => response.data);
+  return rickAndMortyCharacters;
 };
